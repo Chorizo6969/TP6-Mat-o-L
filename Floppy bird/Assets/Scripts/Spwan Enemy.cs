@@ -12,13 +12,7 @@ public class SpwanEnemy : MonoBehaviour
 
     void Start()
     {
-        ShufflePrefab();
-    }
-
-    void ShufflePrefab()
-    {
-        result = Random.Range(1, 6);
-        Spawner();
+        StartCoroutine(Repete());
     }
 
     public void Spawner()
@@ -60,7 +54,7 @@ public class SpwanEnemy : MonoBehaviour
     IEnumerator Repete()
     {
         result = Random.Range(1, 6);
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         Spawner();
     }
 }
